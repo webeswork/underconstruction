@@ -1,0 +1,37 @@
+<style type="text/css">
+</style>
+
+<?php if ($this->pageCount): ?>
+<div class="paginationControl">
+
+<?php  //echo "<br>".$this->previous.",".$this->current.",".$this->next."<br>"; ?>
+<!-- Previous page link -->Page:
+<?php if (isset($this->previous)): ?>
+<a href="<?php echo $this->baseUrl(); ?>/index/index/termid/<?php echo $this->getrequestinfo()->getParam('termid'); ?>/page/<?php echo $this->previous; ?>" >&lt;  &lt;</a>
+|
+<?php else: ?>
+  <span class="disabled">&lt;  &lt;</span> |
+<?php endif; ?>
+
+<!-- Numbered page links -->
+<?php foreach ($this->pagesInRange as $page): ?>
+  <?php if ($page != $this->current): ?> <?php  //echo "<br>page: ".$page."<br>"; ?>
+
+<a href="<?php echo $this->baseUrl(); ?>/index/index/termid/<?php echo $this->getrequestinfo()->getParam('termid'); ?>/page/<?php echo $page; ?>" ><?php echo $page; ?></a>
+ |
+  <?php else: ?>
+    <?php echo $page; ?> |
+  <?php endif; ?>
+<?php endforeach; ?>
+
+<!-- Next page link -->
+<?php if (isset($this->next)): ?>
+<a href="<?php echo $this->baseUrl(); ?>/index/index/termid<?php echo $this->getrequestinfo()->getParam('termid'); ?>/page/<?php echo $this->next; ?>" > &gt; &gt;</a>
+
+<?php else: ?>
+  <span class="disabled">&gt; &gt;</span>
+<?php endif; ?>
+</div>
+<?php endif; ?>
+
+

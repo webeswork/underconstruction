@@ -1,0 +1,38 @@
+<?php
+$index = 0;
+foreach ($this->paginator as $post):
+    ?>
+<div class="blog-post">
+    <h2 class="blog-post-title">
+
+        <a href="<?php echo $this->baseUrl(); ?>/index/view/id/<?php echo $post->ID; ?>" >
+
+            <?php echo $post->post_title; ?>
+
+        </a>
+
+    </h2>
+    <div style="margin-bottom:20px; ">
+<p >
+        <?php echo $this->cr($this->truncatehtml($post->post_content, 300)); ?>
+        <?php //echo "<br><hr><br>". $this->truncatehtml($post->post_content, 300); ?>
+
+
+        <br><br>
+        Posted in:
+        <?php foreach ($this->termsArr[$index] as $termItem): ?>
+            <a href="<?php echo $this->baseUrl(); ?>/index/<?php echo $termItem['term_id'] ?>" ><?php echo $termItem['name'] ?></a>,
+        <?php endforeach; ?>
+        <br>
+
+
+        <?php
+
+        $index++;
+        ?>
+        </p>
+    </div>
+   </div> 
+<?php endforeach; ?>
+
+<div class="pagination" style="margin-bottom: 30px;"><?php echo $this->paginationControl($this->paginator, 'Sliding', '/partials/my_pagination_control.phtml'); ?></div>

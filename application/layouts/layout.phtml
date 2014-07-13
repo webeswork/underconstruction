@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title> 
+            Wordpress database content in Zend Framework</title>
+        <meta name="keywords" content="Wordpress database content in Zend Framework" />
+        <meta name="description" content="
+              Wordpress, database, content,  Zend Framework" />
+
+        <script type="text/javascript">
+            baseURL = "<?php echo $this->baseUrl(); ?>";
+        </script>
+
+        <?php // echo $this->headLink()->prependStylesheet($this->baseUrl() . '/css/style.css'); ?>
+
+
+        <link href="<?php echo $this->baseUrl(); ?>/css/bootstrap/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" ></link>
+        <link href="<?php echo $this->baseUrl(); ?>/css/bootstap_blog.css" media="screen" rel="stylesheet" type="text/css" ></link>
+
+        <script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/js/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/js/youtube_embed.js"></script>
+
+
+    </head>
+
+    <body>
+
+
+        <div class="blog-masthead">
+            <div class="container">
+                <nav class="blog-nav">
+                    <a class="blog-nav-item active" href="<?php echo $this->baseUrl(); ?>">Home</a>  
+                    <a class="blog-nav-item " href="<?php echo $this->baseUrl(); ?>"  >Sample link</a>
+
+
+
+
+
+                </nav>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="blog-header">
+
+                <p class="lead blog-description"></p>
+            </div>
+
+            <div id="wrapper" >
+
+                <div id="content-wrapper" class="col-sm-8 blog-main">
+
+                    <div id="">
+
+
+                        <br>                  
+
+                            <?php echo $this->layout()->content; ?>
+                            <br>
+
+                                <div >
+
+
+                                </div>
+
+
+
+
+
+
+
+                                </div>
+
+
+
+
+
+
+
+
+
+                                </div>
+                                <div id="sidebar" xxclass="col-sm-3 col-sm-offset-1 blog-sidebar">
+
+
+                                    <p class="lead blog-description">Terms</p>
+                                    <?php foreach ($this->terms2 as $term): ?>
+                                        <a href="<?php echo $this->baseUrl(); ?>/index/<?php echo $term['term_id'] ?>" ><?php echo $term['name'] ?></a>,
+                                    <?php endforeach; ?>
+
+                                    <br>        
+
+                                        <br>
+
+
+                                            <!-- category-->
+                                            <p class="lead blog-description">Category</p>
+                                            <ol class="list-unstyled">
+                                                <?php foreach ($this->terms as $term): ?>
+                                                    <li><a href="<?php echo $this->baseUrl(); ?>/index/<?php echo $term['term_id'] ?>" ><?php echo $term['name'] ?></a></li>
+                                                <?php endforeach; ?>
+                                            </ol>  
+
+
+
+                                            </div>
+
+
+                                            </div>
+
+
+
+                                            </div>
+                                            <div class="blog-footer">
+                                                <p>Blog application with  Zend framework and Wordpress database</p>
+
+                                            </div>
+
+                                            </body>
+                                            </html>
